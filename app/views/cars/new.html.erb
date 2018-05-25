@@ -1,0 +1,16 @@
+<h1>Nuevo auto</h1>
+<%= form_with scope: :car, url: cars_path, local: true do |form| %>
+  <p>
+    <%= form.label :brand %><br>
+    <%= form.text_field :brand %>
+  </p>
+
+  <p>
+    <%= form.label :car_model %><br>
+    <%= form.text_field :car_model %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

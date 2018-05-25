@@ -1,0 +1,17 @@
+<h1>Lista de Autos</h1>
+
+<table>
+  <tr>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th></th>
+  </tr>
+
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.brand %></td>
+      <td><%= car.car_model %></td>
+      <td><%= link_to 'Show', car_path(car) %></td>
+    </tr>
+  <% end %>
+</table>
