@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+   http_basic_authenticate_with name: "Julio", password: "Pero men", except: [:index, :show]
+   
   def show
     @car = Car.find(params[:id])
   end
@@ -35,16 +37,16 @@ class CarsController < ApplicationController
       render 'edit'
     end
   end
-end
 
-def destroy
-  @car = Car.find(params[:id])
-  @Car.destroy
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
 
-  redirect_to cars_path
-end
-
-private
-  def car_params
-    params.require(:car).permit(:brand, :car_model)
+    redirect_to cars_path
   end
+
+  private
+    def car_params
+      params.require(:car).permit(:brand, :car_model)
+    end
+end

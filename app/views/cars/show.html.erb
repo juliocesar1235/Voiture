@@ -7,5 +7,11 @@
   <strong>Modelo:</strong>
   <%= @car.car_model %>
 </p>
+
+<h2>Comentarios</h2>
+<%= render @car.comments %>
+
+<h3>Agrega un comentario:</h3>
+<%= render 'comments/form' %>
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Atras', cars_path %>
